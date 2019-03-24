@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fewo-willrich-build
+    ports:
+      - 4200:4200
+    volumes:
+      - ./fewo-willrich:/usr/fewo-willrich
+    container_name: fewo-willrich-build
+    command: npm start
+    networks:
+      - fewo-willrich-nw
+
+networks:
+  fewo-willrich-nw:
