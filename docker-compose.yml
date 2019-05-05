@@ -10,6 +10,9 @@ services:
     volumes:
       - ./fewo-willrich:/usr/fewo-willrich
     container_name: fewo-willrich-build
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
     command: npm start
     networks:
       - fewo-willrich-nw
